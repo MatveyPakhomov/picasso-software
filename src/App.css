@@ -2,37 +2,109 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.form {
+  position: relative;
+  width: 332px;
+  margin-top: 50px;
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 332px;
+  height: 33px;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px 4px 0 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.input__label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: start;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.autocomplete {
+  position: absolute;
+  width: 100%;
+  max-height: 223px;
+  height: auto;
+  overflow: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 4px 4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.autocomplete__item {
+  display: flex;
+  padding: 10px;
+}
+
+.autocomplete__item:hover {
+  color: #fff;
+  background-color: #6ba6ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.2s all ease-out;
+}
+
+.autocomplete__image {
+  max-width: 54px;
+  max-height: 54px;
+}
+
+.autocomplete__span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  margin-left: 14px;
+}
+
+.autocomplete__company {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+  padding: 0;
+
+}
+
+.autocomplete__domain {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #9F9F9F;
+  margin: 0;
+  padding: 0;
 }
