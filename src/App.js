@@ -8,14 +8,21 @@ function App() {
   const getCompanies = async (name) => {
     const url = `https://autocomplete.clearbit.com/v1/companies/suggest?query=:${name}`;
     let response = await fetch(url);
-    let json = await response.json();
-    setValues(json);
+
+    if (response.ok) {
+      let json = await response.json();
+      setValues(json);
+    } else {
+      console.error(response.status, response.statusText);
+    }
   };
 
   const handleChange = (event) => {
     const target = event.target;
     const value = target.value;
-    getCompanies(value);
+    getCompanies(value).catch((err) => {
+      console.error(err);
+    });
   };
 
   const renderAutocomplete = () => {
@@ -46,7 +53,6 @@ function App() {
           {values.length ? (
             <ul className="autocomplete">{renderAutocomplete()}</ul>
           ) : null}
-          {renderAutocomplete}
         </form>
       </header>
     </div>
